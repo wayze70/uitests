@@ -1,0 +1,7 @@
+**/.vscode
+**/.vs
+**/*.csproj.user
+**/*.wapproj.user
+**/*.assets.cache
+**/bin/
+**/obj/
