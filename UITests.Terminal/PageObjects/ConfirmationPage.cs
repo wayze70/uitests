@@ -8,5 +8,10 @@
         {
             _fillAdditionalInfoButton.WaitForElementToBeClickable().Click();
         }
+
+        public void CheckIfFillAdditionalInfoButtonIsVisible()
+        {
+            _fillAdditionalInfoButton.WaitForElementIfVisible();
+        }
     }
 }

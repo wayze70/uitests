@@ -11,7 +11,8 @@ namespace UITests.Terminal
     {
         AccessibilityId,
         Name,
-        ClassName
+        ClassName,
+        XPath
     }
 
     public class CustomFindBy
@@ -52,6 +53,7 @@ namespace UITests.Terminal
                     How.AccessibilityId => Session.Driver.FindElementsByAccessibilityId(_value),
                     How.Name => Session.Driver.FindElementsByName(_value),
                     How.ClassName => Session.Driver.FindElementsByClassName(_value),
+                    How.XPath => Session.Driver.FindElementsByXPath(_value),
                     _ => null,
                 };
             }

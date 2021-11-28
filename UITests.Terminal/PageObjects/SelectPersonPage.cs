@@ -6,7 +6,7 @@ namespace UITests.Terminal.PageObjects
     public class SelectPersonPage
     {
         private CustomFindBy _backButton = new CustomFindBy(How.AccessibilityId, AutomationLocators.SelectPersonPage.BackButton);
-        private CustomFindBy _peopleList = new CustomFindBy(How.Name, AutomationLocators.SelectPersonPage.PeopleList);
+        private CustomFindBy _peopleList = new CustomFindBy(How.AccessibilityId, AutomationLocators.SelectPersonPage.PeopleList);
 
         private CustomFindBy _numZero = new CustomFindBy(How.AccessibilityId, AutomationLocators.SelectPersonPage.NumZero);
         private CustomFindBy _numOne = new CustomFindBy(How.AccessibilityId, AutomationLocators.SelectPersonPage.NumOne);
@@ -29,6 +29,7 @@ namespace UITests.Terminal.PageObjects
         {
             int digit = 0;
             int numOrder = Convert.ToInt32(Math.Pow(10, pin.ToString().Length));
+
             do
             {
                 pin -= numOrder * digit;

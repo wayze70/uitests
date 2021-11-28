@@ -22,5 +22,12 @@
         public static FillRecord.DescriptionPage FillRecordDescriptionPage => GetPage<FillRecord.DescriptionPage>();
         public static FillRecord.ContractPage FillRecordContractPagePage => GetPage<FillRecord.ContractPage>();
         public static FillRecord.SubcontractPage FillRecordSubcontractPage => GetPage<FillRecord.SubcontractPage>();
+        public static FillRecord.BillablePage FillRecordBillablePage => GetPage<FillRecord.BillablePage>();
+        public static FillRecord.ListCustomFieldPage FillRecordListCustomFieldPage => GetPage<FillRecord.ListCustomFieldPage>();
+        public static FillRecord.TextCustomFieldPage FillRecordTextCustomFieldPage => GetPage<FillRecord.TextCustomFieldPage>();
+        public static FillRecord.NumberCustomFieldPage FillRecordNumberCustomFieldPage => GetPage<FillRecord.NumberCustomFieldPage>();
+        public static FillRecord.DecimalCustomFieldPage FillRecordDecimalCustomFieldPage => GetPage<FillRecord.DecimalCustomFieldPage>();
+        public static FillRecord.YesNoCustomFieldPage FillRecordYesNoCustomFieldPage => GetPage<FillRecord.YesNoCustomFieldPage>();
+        public static FillRecord.OverviewPage FillRecordOverviewPage => GetPage<FillRecord.OverviewPage>();
     }
 }

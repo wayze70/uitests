@@ -19,8 +19,9 @@ namespace UITests.Terminal
             PageFactory.TerminalTerminalPage.ClickToSummaryMenuItem();
             PageFactory.TerminalSummaryPage.PageContentMustBeVisible();
 
-            // Go back
+            // Go to home page
             PageFactory.TerminalSummaryPage.ClickToLogoutMenuItem();
+            PageFactory.HomePage.WaitForPage();
         }
     }
 }

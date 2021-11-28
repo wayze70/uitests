@@ -85,7 +85,7 @@
         {
             public const string BackButton = "BackButton";
 
-            public const string PeopleList = "Logeto.Client.Core.DataLayer.GLO_OSOBY";
+            public const string PeopleList = "AvatarText";
 
             public const string NumZero = "Number0Button";
             public const string NumOne = "Number1Button";
@@ -133,48 +133,83 @@
 
         public static class FillRecord
         {
-            public static class Common
+            public static class CommonItems
             {
                 public const string CancelButton = "CancelButton";
 
                 public const string PreviousPageButton = "PreviousEditItemButton";
                 public const string NextPageButton = "NextEditItemButton";
-
-                public const string MainScrollViewer = "MainScrollViewer";
             }
 
             public static class DescriptionPage
             {
-                public const string PageTitel = "AutomationId16";
+                public const string PageTitel = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId16']";
                 public const string TextBox = "AutomationId16TextBox";
             }
 
             public static class ContractPage
             {
-                public const string PageTitel = "AutomationId17";
-                public const string ContractList = "AutomationId17EasierUseModeListBox";
+                public const string PageTitel = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId17']";
+                public const string ContractList = "ListBoxItem";
             }
 
             public static class SubcontractPage
             {
-                public const string PageTitel = "AutomationId18";
+                public const string PageTitel = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId18']";
                 public const string SubcontractList = "ListBoxItem";
             }
 
             public static class BillablePage
             {
-                public static string PageTitel = "AutomationId19";
+                public static string PageTitel = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId19']";
                 public static string ToggleSwitch = "AutomationId19ToggleSwitch";
             }
 
-            public static class RewievPage
+            public static class ListCustomFieldPage
+            {
+                public static string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId20']";
+                public static string ListCustomList = "ListBoxItem";
+            }
+
+            public static class TextCustomFieldPage
+            {
+                public static string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId21']";
+                public static string TextBox = "AutomationId21TextBox";
+            }
+
+            public static class NumberCustomFieldPage
+            {
+                public static string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId22']";
+                public static string NumericTextBox = "AutomationId22NumericTextBox";
+            }
+
+            public static class DecimalCustomFieldPage
+            {
+                public static string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId23']";
+                public static string DecimalTextBox = "AutomationId23NumericTextBox";
+            }
+
+            public static class YesNoCustomFieldPage
+            {
+                public static string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId24']";
+                public static string ToggleSwitch = "AutomationId24ToggleSwitch";
+            }
+
+            public static class OverviewPage
             {
                 public static string SettingsButton = "SettingsButton";
+                public static string DeclineButton = "//Button[@ClassName='Button'][position()=1]";
+                public static string ConfirmButton = "//Button[@ClassName='Button'][position()=2]";
 
                 public static string DescriptionTextBox = "AutomationId16TextBox";
                 public static string ContractComboBox = "AutomationId17TextBox";
-                public static string SubContractComboBox = "AutomationId18TextBox";
-                public static string ToggleSwitch = "AutomationId19ToggleSwitch";
+                public static string SubcontractComboBox = "AutomationId18TextBox";
+                public static string BillableToggleSwitch = "AutomationId19ToggleSwitch";
+                public static string ListCustomFieldComboBox = "AutomationId20TextBox";
+                public static string TextCustomFieldTextBox = "AutomationId21TextBox";
+                public static string NumberCustomFieldTextBox = "AutomationId22NumericTextBox";
+                public static string DecimalCustomFieldTextBox = "AutomationId23NumericTextBox";
+                public static string YesNoToggleSwitch = "AutomationId24ToggleSwitch";
             }
         }
     }

@@ -2,10 +2,10 @@
 {
     public class HomePage
     {
-        public CustomFindBy _time = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.TimeTextBlock);
-        public CustomFindBy _goToSettings = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.GoToSettingButton);
-        public CustomFindBy _settings = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.SettingsButton);
-        public CustomFindBy _enterPin = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.EnterPin);
+        private CustomFindBy _time = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.TimeTextBlock);
+        private CustomFindBy _goToSettings = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.GoToSettingButton);
+        private CustomFindBy _settings = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.SettingsButton);
+        private CustomFindBy _enterPin = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.EnterPin);
 
         public void ClickToEnterPin()
         {
