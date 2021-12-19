@@ -7,7 +7,7 @@
 
         public void SelectListItem(string item)
         {
-            foreach (var listItem in _listCustomList.WaitForElements())
+            foreach (var listItem in _listCustomList.WaitForElementsToBeClickable())
             {
                 if (listItem.Text == item)
                 {

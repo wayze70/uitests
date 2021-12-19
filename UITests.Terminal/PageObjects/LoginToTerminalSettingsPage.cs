@@ -2,12 +2,12 @@
 {
     public class LoginToTerminalSettingsPage
     {
-        private CustomFindBy _adminPassword = new CustomFindBy(How.AccessibilityId, AutomationLocators.LoginToTerminalSettingsPage.AdminPassword);
-        private CustomFindBy _continueButton = new CustomFindBy(How.AccessibilityId, AutomationLocators.LoginToTerminalSettingsPage.Continue);
+        private CustomFindBy _adminPasswordTextBox = new CustomFindBy(How.AccessibilityId, AutomationLocators.LoginToTerminalSettingsPage.AdminPasswordTextBox);
+        private CustomFindBy _continueButton = new CustomFindBy(How.AccessibilityId, AutomationLocators.LoginToTerminalSettingsPage.ContinueButton);
 
         public void WriteAllInformationOnPage(string adminPassword)
         {
-            Session.SendKeys(_adminPassword.WaitForElementToBeClickable(), adminPassword);
+            Session.SendKeys(_adminPasswordTextBox.WaitForElementToBeClickable(), adminPassword);
         }
 
         public void ClickToContinueButton()

@@ -6,6 +6,9 @@
         private CustomFindBy _nextPageButton = new CustomFindBy(How.AccessibilityId, AutomationLocators.FillRecord.CommonItems.NextPageButton);
         private CustomFindBy _previousPageButton = new CustomFindBy(How.AccessibilityId, AutomationLocators.FillRecord.CommonItems.PreviousPageButton);
 
+        private CustomFindBy _confirmButton = new CustomFindBy(How.AccessibilityId, AutomationLocators.FillRecord.CommonItems.ConfirmButton);
+        private CustomFindBy _declineButton = new CustomFindBy(How.AccessibilityId, AutomationLocators.FillRecord.CommonItems.DeclineButton);
+
         public void ClickToCancelButton()
         {
             _cancelButton.WaitForElementToBeClickable().Click();
@@ -16,9 +19,19 @@
             _nextPageButton.WaitForElementToBeClickable().Click();
         }
 
-        public void PreviousPageButton()
+        public void ClickToPreviousPageButton()
         {
             _previousPageButton.WaitForElementToBeClickable().Click();
+        }
+
+        public void ClickToConfirmEditButton()
+        {
+            _confirmButton.WaitForElementToBeClickable().Click();
+        }
+
+        public void ClickToDeclineEditButton()
+        {
+            _declineButton.WaitForElementToBeClickable().Click();
         }
     }
 }

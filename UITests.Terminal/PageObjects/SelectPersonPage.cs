@@ -6,7 +6,7 @@ namespace UITests.Terminal.PageObjects
     public class SelectPersonPage
     {
         private CustomFindBy _backButton = new CustomFindBy(How.AccessibilityId, AutomationLocators.SelectPersonPage.BackButton);
-        private CustomFindBy _peopleList = new CustomFindBy(How.AccessibilityId, AutomationLocators.SelectPersonPage.PeopleList);
+        private CustomFindBy _peopleList = new CustomFindBy(How.ClassName, AutomationLocators.SelectPersonPage.PeopleList);
 
         private CustomFindBy _numZero = new CustomFindBy(How.AccessibilityId, AutomationLocators.SelectPersonPage.NumZero);
         private CustomFindBy _numOne = new CustomFindBy(How.AccessibilityId, AutomationLocators.SelectPersonPage.NumOne);
@@ -21,7 +21,7 @@ namespace UITests.Terminal.PageObjects
 
         public void ClickToPerson()
         {
-            var elements = _peopleList.WaitForElements();
+            var elements = _peopleList.WaitForElementsToBeClickable();
             elements.ElementAt(new Random().Next(0, elements.Count - 1)).Click();
         }
 

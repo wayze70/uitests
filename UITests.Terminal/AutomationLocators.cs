@@ -43,6 +43,7 @@
         public static class HomePage
         {
             public const string TopLeftTitleTextBlock = "LeftTitleTextBlock";
+            public const string TitleAdditionalTextBlock = "TitleAdditionalTextBlock";
             public const string TimeTextBlock = "TimeTextBlock";
             public const string MessageTextBlock = "MessageTextBlock";
             public const string GoToSettingButton = "GoToSettingButton";
@@ -52,8 +53,8 @@
 
         public static class LoginToTerminalSettingsPage
         {
-            public const string AdminPassword = "AppPassword";
-            public const string Continue = "ConfirmButton";
+            public const string AdminPasswordTextBox = "AppPassword";
+            public const string ContinueButton = "ConfirmButton";
         }
 
         public static class Settings
@@ -62,8 +63,8 @@
             {
                 public const string BackButton = "BackButton";
 
-                public const string SideMenuItems = "Logeto.Client.UWP.Terminal.Utils.MenuItem";
-
+                public const string SideMenuItems = "ListViewItem";
+                // No needed
                 public const string AccountListItem = "Account";
                 public const string LocationListItem = "Location";
                 public const string BehaviorListItem = "Behavior";
@@ -71,6 +72,38 @@
                 public const string GeneralListItem = "General";
                 public const string PeopleListItem = "People";
                 public const string IdentificationSettingListItem = "IdentificationSetting";
+                //
+
+                // TO DO
+                public const string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][position()=1]";
+            }
+
+            public static class AccountPage
+            {
+                public const string LogoutButton = "LogoutButton";
+            }
+
+            public static class YourAccountPage
+            {
+                public const string AccountTextBox = "AccountTextBox";
+                public const string EmailTextBox = "LoginAccessKeyTextBox";
+                public const string UserPasswordTextBox = "UserPassword";
+                public const string ContinueButton = "AccountContinueButton";
+            }
+
+            public static class NameAndLocationPage
+            {
+                public const string DeviceNameTextBox = "TerminalNameTextBox";
+                public const string LocationAddressComboBox = "ComboBoxTextBox";
+                public const string ClearButton = "ClearButton";
+                public const string MapPopupButton = "ExtraButton";
+            }
+
+            public static class AppearancePage
+            {
+                public const string TitleMainTextBox = "TitleMainTextBox";
+                public const string UseTerminalNameAsTitleCheckBox = "UseTerminalNameAsTitleCheckBox";
+                public const string TitleAdditionalTextBox = "TitleAdditionalTextBox";
             }
 
             public static class PeoplePage
@@ -83,9 +116,9 @@
 
         public static class SelectPersonPage
         {
-            public const string BackButton = "BackButton";
+            public const string BackButton = "BackButton"; 
 
-            public const string PeopleList = "AvatarText";
+            public const string PeopleList = "ListViewItem";
 
             public const string NumZero = "Number0Button";
             public const string NumOne = "Number1Button";
@@ -139,6 +172,9 @@
 
                 public const string PreviousPageButton = "PreviousEditItemButton";
                 public const string NextPageButton = "NextEditItemButton";
+
+                public const string ConfirmButton = "ConfirmButton";
+                public const string DeclineButton = "BackButton";
             }
 
             public static class DescriptionPage
@@ -198,8 +234,10 @@
             public static class OverviewPage
             {
                 public static string SettingsButton = "SettingsButton";
-                public static string DeclineButton = "//Button[@ClassName='Button'][position()=1]";
-                public static string ConfirmButton = "//Button[@ClassName='Button'][position()=2]";
+                public static string DeclineButton = "//Pane[@AutomationId='MainScrollViewer']/Button[@ClassName='Button'][position()=1]";
+                public static string ConfirmButton = "//Pane[@AutomationId='MainScrollViewer']/Button[@ClassName='Button'][position()=2]";
+
+                public static string UserSettings = "UserSettings";
 
                 public static string DescriptionTextBox = "AutomationId16TextBox";
                 public static string ContractComboBox = "AutomationId17TextBox";
@@ -210,6 +248,13 @@
                 public static string NumberCustomFieldTextBox = "AutomationId22NumericTextBox";
                 public static string DecimalCustomFieldTextBox = "AutomationId23NumericTextBox";
                 public static string YesNoToggleSwitch = "AutomationId24ToggleSwitch";
+            }
+
+            public static class OverviewSettingsPage
+            {
+                public static string BackButton = "BackButton";
+
+                public static string StartFillInOtherInformationAutomatically = "FillInfoAutomaticallyCheckBox";
             }
         }
     }

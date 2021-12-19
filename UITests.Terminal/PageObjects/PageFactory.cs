@@ -13,6 +13,11 @@
         public static Login.LocationPopUp LocationPopUp => GetPage<Login.LocationPopUp>();
         public static Login.PasswordPage LoginPasswordPage => GetPage<Login.PasswordPage>();
         public static LoginToTerminalSettingsPage LoginToTerminalSettingsPage => GetPage<LoginToTerminalSettingsPage>();
+        public static Settings.AccountPage SettingsAccountPage => GetPage<Settings.AccountPage>();
+        public static Settings.YourAccount SettingsYourAccountPage => GetPage<Settings.YourAccount>();
+        public static Settings.NameAndLocationPage SettingsNameAndLocationPage => GetPage<Settings.NameAndLocationPage>();
+        public static Settings.BehaviorPage SettingsBehaviorPage => GetPage<Settings.BehaviorPage>();
+        public static Settings.AppearancePage SettingsAppearancePage => GetPage<Settings.AppearancePage>();
         public static Settings.PeoplePage SettingsPeoplePage => GetPage<Settings.PeoplePage>();
         public static SelectPersonPage SelectPersonPage => GetPage<SelectPersonPage>();
         public static HomePage HomePage => GetPage<HomePage>();
@@ -29,5 +34,6 @@
         public static FillRecord.DecimalCustomFieldPage FillRecordDecimalCustomFieldPage => GetPage<FillRecord.DecimalCustomFieldPage>();
         public static FillRecord.YesNoCustomFieldPage FillRecordYesNoCustomFieldPage => GetPage<FillRecord.YesNoCustomFieldPage>();
         public static FillRecord.OverviewPage FillRecordOverviewPage => GetPage<FillRecord.OverviewPage>();
+        public static FillRecord.SettingsPage FillRecordSettingsPage => GetPage<FillRecord.SettingsPage>();
     }
 }

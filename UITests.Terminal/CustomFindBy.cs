@@ -70,7 +70,8 @@ namespace UITests.Terminal
 
         public IReadOnlyCollection<WindowsElement> WaitForElements()
         {
-            return Wait.Until(driver => {
+            return Wait.Until(driver =>
+            {
                 var elements = GetElements();
 
                 if (elements != null)
@@ -87,10 +88,12 @@ namespace UITests.Terminal
 
         public WindowsElement WaitForElementToBeClickable()
         {
-            return Wait.Until(driver => {
+            return Wait.Until(driver =>
+            {
                 try
                 {
                     var element = WaitForElementIfVisible();
+
                     if (element != null && element.Enabled)
                     {
                         return element;
@@ -107,13 +110,74 @@ namespace UITests.Terminal
             });
         }
 
+        public IReadOnlyCollection<WindowsElement> WaitForElementsToBeClickable()
+        {
+            return Wait.Until(driver =>
+            {
+                try
+                {
+                    var elements = WaitForElementsIfVisible();
+
+                    if (elements.Count > 0 && elements != null)
+                    {
+                        foreach (var item in elements)
+                        {
+                            if (item == null || !item.Enabled) // All items in collection must be Enable
+                            {
+                                return null;
+                            }
+                        }
+
+                        return elements;
+                    }
+
+                    return null;
+                }
+                catch
+                {
+                    return null;
+                }
+            });
+        }
+
         public WindowsElement WaitForElementIfVisible()
         {
-            return Wait.Until(driver => {
+            return Wait.Until(driver =>
+            {
                 try
                 {
                     var element = GetElement();
                     return element.Displayed ? element : null;
+                }
+                catch
+                {
+                    return null;
+                }
+            });
+        }
+
+        public IReadOnlyCollection<WindowsElement> WaitForElementsIfVisible()
+        {
+            return Wait.Until(driver =>
+            {
+                try
+                {
+                    var elements = GetElements();
+
+                    if (elements.Count > 0 && elements != null)
+                    {
+                        foreach (var item in elements)
+                        {
+                            if (item == null || !item.Displayed) // All items in collection must be Displayed
+                            {
+                                return null;
+                            }
+                        }
+
+                        return elements;
+                    }
+
+                    return null;
                 }
                 catch
                 {

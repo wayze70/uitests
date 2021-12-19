@@ -7,7 +7,7 @@
 
         public void SelectContract(string contract)
         {
-            foreach (var item in _contractList.WaitForElements())
+            foreach (var item in _contractList.WaitForElementsToBeClickable())
             {
                 if (item.Text == contract)
                 {

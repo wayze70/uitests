@@ -22,6 +22,8 @@ namespace UITests.Terminal
 
                 // Select activity
                 PageFactory.TerminalTerminalPage.ClickToActivity();
+
+                // Wait for home page
                 PageFactory.HomePage.WaitForPage();
             }
         }

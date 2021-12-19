@@ -7,7 +7,7 @@
 
         public void SelectSubcontract(string subcontract)
         {
-            foreach (var item in _subcontractList.WaitForElements())
+            foreach (var item in _subcontractList.WaitForElementsToBeClickable())
             {
                 if (item.Text == subcontract)
                 {
