@@ -1,17 +1,21 @@
-﻿namespace UITests.Terminal.PageObjects
+﻿using System.Threading;
+
+namespace UITests.Terminal.PageObjects
 {
     public class HomePage
     {
-        private CustomFindBy _time = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.TimeTextBlock);
-        private CustomFindBy _goToSettings = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.GoToSettingButton);
-        private CustomFindBy _settings = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.SettingsButton);
-        private CustomFindBy _enterPin = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.EnterPin);
-        private CustomFindBy _mainTitleTextBlock = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.TopLeftTitleTextBlock);
-        private CustomFindBy _additionTitleTextBlock = new CustomFindBy(How.AccessibilityId, AutomationLocators.HomePage.TitleAdditionalTextBlock);
+        private FindBy _time = new FindBy(How.AccessibilityId, AutomationLocators.HomePage.TimeTextBlock);
+        private FindBy _goToSettings = new FindBy(How.AccessibilityId, AutomationLocators.HomePage.GoToSettingButton);
+        private FindBy _settings = new FindBy(How.AccessibilityId, AutomationLocators.HomePage.SettingsButton);
+        private FindBy _enterPin = new FindBy(How.AccessibilityId, AutomationLocators.HomePage.EnterPinTextBlock);
+        private FindBy _mainTitleTextBlock = new FindBy(How.AccessibilityId, AutomationLocators.HomePage.MainTitleTextBlock);
+        private FindBy _additionTitleTextBlock = new FindBy(How.AccessibilityId, AutomationLocators.HomePage.AdditionalTitleTextBlock);
+        private FindBy _messageTextBlock = new FindBy(How.AccessibilityId, AutomationLocators.HomePage.MessageTextBlock);
 
-        public void ClickToEnterPin()
+        public bool IsMessageTextBlockVisible()
         {
-            _enterPin.WaitForElementToBeClickable().Click();
+            Thread.Sleep(500);
+            return _messageTextBlock.WaitForElementIfVisible().Text == "Plug in reader or allow access by entering the PIN";
         }
 
         public void ClickToGoToSettings()
@@ -22,6 +26,11 @@
         public void ClickToSettings()
         {
             _settings.WaitForElementToBeClickable().Click();
+        }
+
+        public void ClickToEnterPin()
+        {
+            _enterPin.WaitForElementToBeClickable().Click();
         }
 
         public void WaitForPage()

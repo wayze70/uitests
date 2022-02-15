@@ -7,36 +7,35 @@ namespace UITests.Terminal
     [TestFixture]
     public class TestBase
     {
-        [SetUp]
-        public void Login()
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
         {
-            if (PageFactory.LoginWelcomePage.IsStartTheSetupWizzardDisplayed())
+            Session.InitLocalDrivers();
+
+            if (PageFactory.SetupPages.WelcomePage.IsStartTheSetupWizzardVisible())
             {
-                PageFactory.LoginWelcomePage.ClickToStartTheSetupWizzard();
-
-                switch (Session.Enviroment)
-                {
-                    case Constants.Enviroment.Production:
-                        PageFactory.LoginAccountPage.WriteAllInformationOnPage(Constants.Account.Production.AccountName, Constants.Account.Production.Email, Constants.Account.Production.Password);
-                        break;
-
-                    case Constants.Enviroment.Staging:
-                        PageFactory.LoginAccountPage.WriteAllInformationOnPage(Constants.Account.Staging.AccountName, Constants.Account.Staging.Email, Constants.Account.Staging.Password);
-                        break;
-
-                    case Constants.Enviroment.Development:
-                        PageFactory.LoginAccountPage.WriteAllInformationOnPage(Constants.Account.Development.AccountName, Constants.Account.Development.Email, Constants.Account.Development.Password);
-                        break;
-                }
-
-                PageFactory.LoginAccountPage.ClickToContinueButton();
-                PageFactory.LoginNameAndLocationPage.WriteAllInformationOnPage("HW-Terminal");
-                PageFactory.LoginNameAndLocationPage.ClickToContinueButton();
-                PageFactory.LoginPasswordPage.WriteAllInformationOnPage("123456", "123456");
-                PageFactory.LoginPasswordPage.ClickToFinishButton();
+                PageFactory.SetupPages.WelcomePage.ClickToStartTheSetupWizzard();
+                PageFactory.SetupPages.AccountPage.WriteAllInformationOnPage(Session.GetAcountName(Session.Enviroment), Constants.Account.Email, Constants.Account.Password);
+                PageFactory.SetupPages.AccountPage.ClickToContinueButton();
+                PageFactory.SetupPages.NameAndLocationPage.WriteAllInformationOnPage(Constants.Terminal.Name);
+                PageFactory.SetupPages.NameAndLocationPage.ClickToContinueButton();
+                PageFactory.SetupPages.PasswordPage.WriteAllInformationOnPage(Constants.Terminal.Password, Constants.Terminal.Password);
+                PageFactory.SetupPages.PasswordPage.ClickToFinishButton();
             }
 
             PageFactory.HomePage.WaitForPage();
+
+            if (PageFactory.HomePage.IsMessageTextBlockVisible())
+            {
+                PageFactory.HomePage.ClickToGoToSettings();
+                PageFactory.SettingsPages.LoginToTerminalSettingsPage.WriteAllInformationOnPage(Constants.Terminal.Password);
+                PageFactory.SettingsPages.LoginToTerminalSettingsPage.ClickToContinueButton();
+                Assert.AreEqual(LocalizedStrings.SettingsPageTitles.People, PageFactory.SettingsPages.PeoplePage.GetPageTitle());
+                PageFactory.SettingsPages.PeoplePage.SetPinToAllPeople(Constants.Terminal.Pin);
+                PageFactory.SettingsPages.PeoplePage.ClickToBackButton();
+                PageFactory.HomePage.WaitForPage();
+                Assert.False(PageFactory.HomePage.IsMessageTextBlockVisible());
+            }
         }
 
         [TearDown]
@@ -46,6 +45,12 @@ namespace UITests.Terminal
             {
                 Session.TakeScreenshot(Path.Combine(Constants.Directory.Errors, TestContext.CurrentContext.Test.MethodName));
             }
+        }
+
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
+        {
+            Session.Driver.Quit();
         }
     }
 }

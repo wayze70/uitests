@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Appium.Windows;
 using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Threading;
 using UITests.Terminal;
 
@@ -29,5 +30,35 @@ public partial class Session
 
         Directory.CreateDirectory(errors);
         screenshot.SaveAsFile(Path.Combine(screenshots, fileName + " " + dateTimeMark + ".png"), ScreenshotImageFormat.Png);
+    }
+
+    public static string GetAcountName(string environment)
+    {
+        string prefix = null;
+
+        switch (environment)
+        {
+            case Constants.Environment.Staging:
+                {
+                    prefix = "stage";
+                }
+                break;
+            case Constants.Environment.Development:
+                {
+                    prefix = "dev";
+                }
+                break;
+            case Constants.Environment.Production:
+                {
+                    prefix = "test";
+                }
+                break;
+            case var e when Regex.IsMatch(e, "^log[0-9]+$"):
+                {
+                    prefix = e;
+                }
+                break;
+        }
+        return prefix + Constants.Account.AccountName;
     }
 }

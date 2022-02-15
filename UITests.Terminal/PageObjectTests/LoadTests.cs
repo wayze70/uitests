@@ -9,7 +9,7 @@ namespace UITests.Terminal
         private const int Iterations = 500;
 
         [Test]
-        public static void LoadTest()
+        public static void Load_Test()
         {
             for (int i = 1; i <= Iterations; i++)
             {
@@ -21,7 +21,7 @@ namespace UITests.Terminal
                 PageFactory.SelectPersonPage.EnterPin(1234);
 
                 // Select activity
-                PageFactory.TerminalTerminalPage.ClickToActivity();
+                PageFactory.TerminalPages.TerminalPage.ClickToActivity();
 
                 // Wait for home page
                 PageFactory.HomePage.WaitForPage();
@@ -29,4 +29,3 @@ namespace UITests.Terminal
         }
     }
 }
-

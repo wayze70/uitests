@@ -4,36 +4,58 @@
     {
         private static T GetPage<T>() where T : new()
         {
-            return new T();            
+            return new T();
         }
 
-        public static Login.WelcomePage LoginWelcomePage => GetPage<Login.WelcomePage>();
-        public static Login.AccountPage LoginAccountPage => GetPage<Login.AccountPage>();
-        public static Login.NameAndLocationPage LoginNameAndLocationPage => GetPage<Login.NameAndLocationPage>();
-        public static Login.LocationPopUp LocationPopUp => GetPage<Login.LocationPopUp>();
-        public static Login.PasswordPage LoginPasswordPage => GetPage<Login.PasswordPage>();
-        public static LoginToTerminalSettingsPage LoginToTerminalSettingsPage => GetPage<LoginToTerminalSettingsPage>();
-        public static Settings.AccountPage SettingsAccountPage => GetPage<Settings.AccountPage>();
-        public static Settings.YourAccount SettingsYourAccountPage => GetPage<Settings.YourAccount>();
-        public static Settings.NameAndLocationPage SettingsNameAndLocationPage => GetPage<Settings.NameAndLocationPage>();
-        public static Settings.BehaviorPage SettingsBehaviorPage => GetPage<Settings.BehaviorPage>();
-        public static Settings.AppearancePage SettingsAppearancePage => GetPage<Settings.AppearancePage>();
-        public static Settings.PeoplePage SettingsPeoplePage => GetPage<Settings.PeoplePage>();
-        public static SelectPersonPage SelectPersonPage => GetPage<SelectPersonPage>();
         public static HomePage HomePage => GetPage<HomePage>();
-        public static Terminal.TerminalPage TerminalTerminalPage => GetPage<Terminal.TerminalPage>();
-        public static Terminal.SummaryPage TerminalSummaryPage => GetPage<Terminal.SummaryPage>();
-        public static ConfirmationPage ConfirmationPage => GetPage<ConfirmationPage>();
-        public static FillRecord.DescriptionPage FillRecordDescriptionPage => GetPage<FillRecord.DescriptionPage>();
-        public static FillRecord.ContractPage FillRecordContractPagePage => GetPage<FillRecord.ContractPage>();
-        public static FillRecord.SubcontractPage FillRecordSubcontractPage => GetPage<FillRecord.SubcontractPage>();
-        public static FillRecord.BillablePage FillRecordBillablePage => GetPage<FillRecord.BillablePage>();
-        public static FillRecord.ListCustomFieldPage FillRecordListCustomFieldPage => GetPage<FillRecord.ListCustomFieldPage>();
-        public static FillRecord.TextCustomFieldPage FillRecordTextCustomFieldPage => GetPage<FillRecord.TextCustomFieldPage>();
-        public static FillRecord.NumberCustomFieldPage FillRecordNumberCustomFieldPage => GetPage<FillRecord.NumberCustomFieldPage>();
-        public static FillRecord.DecimalCustomFieldPage FillRecordDecimalCustomFieldPage => GetPage<FillRecord.DecimalCustomFieldPage>();
-        public static FillRecord.YesNoCustomFieldPage FillRecordYesNoCustomFieldPage => GetPage<FillRecord.YesNoCustomFieldPage>();
-        public static FillRecord.OverviewPage FillRecordOverviewPage => GetPage<FillRecord.OverviewPage>();
-        public static FillRecord.SettingsPage FillRecordSettingsPage => GetPage<FillRecord.SettingsPage>();
+        public static SelectPersonPage SelectPersonPage => GetPage<SelectPersonPage>();
+
+        public static class CommonPages
+        {
+            public static PageObjects.CommonPages.LocationPopupPage LocationPopupPage => GetPage<PageObjects.CommonPages.LocationPopupPage>();
+        }
+
+        public static class SetupPages
+        {
+            public static PageObjects.SetupPages.WelcomePage WelcomePage => GetPage<PageObjects.SetupPages.WelcomePage>();
+            public static PageObjects.SetupPages.AccountPage AccountPage => GetPage<PageObjects.SetupPages.AccountPage>();
+            public static PageObjects.SetupPages.NameAndLocationPage NameAndLocationPage => GetPage<PageObjects.SetupPages.NameAndLocationPage>();
+            public static PageObjects.SetupPages.PasswordPage PasswordPage => GetPage<PageObjects.SetupPages.PasswordPage>();
+        }
+
+        public static class SettingsPages
+        {
+            public static PageObjects.SettingsPages.LoginToTerminalSettingsPage LoginToTerminalSettingsPage => GetPage<PageObjects.SettingsPages.LoginToTerminalSettingsPage>();
+            public static PageObjects.SettingsPages.AccountPage AccountPage => GetPage<PageObjects.SettingsPages.AccountPage>();
+            public static PageObjects.SettingsPages.YourAccount YourAccountPage => GetPage<PageObjects.SettingsPages.YourAccount>();
+            public static PageObjects.SettingsPages.NameAndLocationPage NameAndLocationPage => GetPage<PageObjects.SettingsPages.NameAndLocationPage>();
+            public static PageObjects.SettingsPages.BehaviorPage BehaviorPage => GetPage<PageObjects.SettingsPages.BehaviorPage>();
+            public static PageObjects.SettingsPages.AppearancePage AppearancePage => GetPage<PageObjects.SettingsPages.AppearancePage>();
+            public static PageObjects.SettingsPages.GeneralPage GeneralPage => GetPage<PageObjects.SettingsPages.GeneralPage>();
+            public static PageObjects.SettingsPages.PeoplePage PeoplePage => GetPage<PageObjects.SettingsPages.PeoplePage>();
+            public static PageObjects.SettingsPages.IdentificationPage IdentificationPage => GetPage<PageObjects.SettingsPages.IdentificationPage>();
+        }
+
+        public static class TerminalPages
+        {
+            public static PageObjects.TerminalPages.TerminalPage TerminalPage => GetPage<PageObjects.TerminalPages.TerminalPage>();
+            public static PageObjects.TerminalPages.SummaryPage SummaryPage => GetPage<PageObjects.TerminalPages.SummaryPage>();
+        }
+
+        public static class FillRecordPages
+        {
+            public static PageObjects.FillRecordPages.ConfirmationPage ConfirmationPage => GetPage<PageObjects.FillRecordPages.ConfirmationPage>();
+            public static PageObjects.FillRecordPages.DescriptionPage DescriptionPage => GetPage<PageObjects.FillRecordPages.DescriptionPage>();
+            public static PageObjects.FillRecordPages.ContractPage ContractPagePage => GetPage<PageObjects.FillRecordPages.ContractPage>();
+            public static PageObjects.FillRecordPages.SubcontractPage SubcontractPage => GetPage<PageObjects.FillRecordPages.SubcontractPage>();
+            public static PageObjects.FillRecordPages.BillablePage BillablePage => GetPage<PageObjects.FillRecordPages.BillablePage>();
+            public static PageObjects.FillRecordPages.ListCustomFieldPage ListCustomFieldPage => GetPage<PageObjects.FillRecordPages.ListCustomFieldPage>();
+            public static PageObjects.FillRecordPages.TextCustomFieldPage TextCustomFieldPage => GetPage<PageObjects.FillRecordPages.TextCustomFieldPage>();
+            public static PageObjects.FillRecordPages.NumberCustomFieldPage NumberCustomFieldPage => GetPage<PageObjects.FillRecordPages.NumberCustomFieldPage>();
+            public static PageObjects.FillRecordPages.DecimalCustomFieldPage DecimalCustomFieldPage => GetPage<PageObjects.FillRecordPages.DecimalCustomFieldPage>();
+            public static PageObjects.FillRecordPages.YesNoCustomFieldPage YesNoCustomFieldPage => GetPage<PageObjects.FillRecordPages.YesNoCustomFieldPage>();
+            public static PageObjects.FillRecordPages.OverviewPage OverviewPage => GetPage<PageObjects.FillRecordPages.OverviewPage>();
+            public static PageObjects.FillRecordPages.SettingsPage SettingsPage => GetPage<PageObjects.FillRecordPages.SettingsPage>();
+        }
     }
 }

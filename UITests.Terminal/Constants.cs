@@ -4,29 +4,19 @@
     {
         public class Account
         {
-            public class Production
-            {
-                public const string AccountName = "testdbsyristeautoterminal";
-                public const string Email = "michal.syriste@vykazprace.cz";
-                public const string Password = "123456";
-            }
-
-            public class Staging
-            {
-                public const string AccountName = "stagedbsyristeautoterminal";
-                public const string Email = "michal.syriste@vykazprace.cz";
-                public const string Password = "123456";
-            }
-
-            public class Development
-            {
-                public const string AccountName = "devdbsyristeautoterminal";
-                public const string Email = "michal.syriste@vykazprace.cz";
-                public const string Password = "123456";
-            }
+            public const string AccountName = "dbsyristeautoterminal";
+            public const string Email = "michal.syriste@vykazprace.cz";
+            public const string Password = "123456";
         }
 
-        public class Enviroment
+        public class Terminal
+        {
+            public const string Name = "HW-Terminal";
+            public const string Password = "123456";
+            public const string Pin = "1234";
+        }
+
+        public class Environment
         {
             public const string Staging = "staging";
             public const string Development = "development";

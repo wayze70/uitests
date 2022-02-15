@@ -1,23 +1,32 @@
 ﻿namespace UITests.Terminal
 {
-    public static class AutomationLocators
+    public class AutomationLocators
     {
-        public static class Login
+        public class CommonPages
         {
-            public static class WelcomePage
+            public class LocationPopUpPage
+            {
+                public const string Map = "Map";
+                public const string SelectButton = "OKButton";
+            }
+        }
+
+        public class SetupPages
+        {
+            public class WelcomePage
             {
                 public const string StartWizardButton = "StartWizardButton";
             }
 
-            public static class AccountPage
+            public class AccountPage
             {
                 public const string AccountNameTextBox = "AccountTextBox";
                 public const string EmailTextBox = "LoginAccessKeyTextBox";
-                public const string UserPassword = "UserPassword";
+                public const string UserPasswordTextBox = "UserPassword";
                 public const string ContinueButton = "AccountContinueButton";
             }
 
-            public static class NameAndLocationPage
+            public class NameAndLocationPage
             {
                 public const string DeviceNameTextBox = "TerminalNameTextBox";
                 public const string LocationAdressComboBox = "ComboBoxTextBox";
@@ -26,45 +35,37 @@
                 public const string ContinueButton = "LocationContinueButton";
             }
 
-            public static class LocationPopUp
+            public class PasswordPage
             {
-                public static string Map = "Map";
-                public static string SelectButton = "OKButton";
-            }
-
-            public static class PasswordPage
-            {
-                public const string AdminPassword = "AdminPassword";
-                public const string AdminPasswordCheck = "AdminPasswordCheck";
+                public const string AdminPasswordTextBox = "AdminPassword";
+                public const string AdminPasswordCheckTextBox = "AdminPasswordCheck";
                 public const string ContinueButton = "PasswordContinueButton";
             }
         }
 
-        public static class HomePage
+        public class HomePage
         {
-            public const string TopLeftTitleTextBlock = "LeftTitleTextBlock";
-            public const string TitleAdditionalTextBlock = "TitleAdditionalTextBlock";
+            public const string MainTitleTextBlock = "LeftTitleTextBlock";
+            public const string AdditionalTitleTextBlock = "TitleAdditionalTextBlock";
             public const string TimeTextBlock = "TimeTextBlock";
             public const string MessageTextBlock = "MessageTextBlock";
             public const string GoToSettingButton = "GoToSettingButton";
             public const string SettingsButton = "SettingsButton";
-            public const string EnterPin = "ManualLoginTextBlock";
+            public const string EnterPinTextBlock = "ManualLoginTextBlock";
         }
 
-        public static class LoginToTerminalSettingsPage
+        public class LoginToTerminalSettingsPage
         {
             public const string AdminPasswordTextBox = "AppPassword";
             public const string ContinueButton = "ConfirmButton";
         }
 
-        public static class Settings
+        public class SettingsPages
         {
-            public static class SettingSideBar
+            public class SettingsSideMenu
             {
                 public const string BackButton = "BackButton";
 
-                public const string SideMenuItems = "ListViewItem";
-                // No needed
                 public const string AccountListItem = "Account";
                 public const string LocationListItem = "Location";
                 public const string BehaviorListItem = "Behavior";
@@ -72,18 +73,16 @@
                 public const string GeneralListItem = "General";
                 public const string PeopleListItem = "People";
                 public const string IdentificationSettingListItem = "IdentificationSetting";
-                //
 
-                // TO DO
                 public const string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][position()=1]";
             }
 
-            public static class AccountPage
+            public class AccountPage
             {
                 public const string LogoutButton = "LogoutButton";
             }
 
-            public static class YourAccountPage
+            public class YourAccountPage
             {
                 public const string AccountTextBox = "AccountTextBox";
                 public const string EmailTextBox = "LoginAccessKeyTextBox";
@@ -91,82 +90,107 @@
                 public const string ContinueButton = "AccountContinueButton";
             }
 
-            public static class NameAndLocationPage
+            public class NameAndLocationPage
             {
                 public const string DeviceNameTextBox = "TerminalNameTextBox";
+                public const string ErrorMessageTextBlock = "TextBlock";
                 public const string LocationAddressComboBox = "ComboBoxTextBox";
                 public const string ClearButton = "ClearButton";
-                public const string MapPopupButton = "ExtraButton";
+                public const string ExtraButton = "ExtraButton";
             }
 
-            public static class AppearancePage
+            public class BehaviorPage
             {
-                public const string TitleMainTextBox = "TitleMainTextBox";
+                public const string SetLoginPageAsDefultCheckBox = "SetLoginPageAsDefultCheckBox";
+                public const string TimeToSelectTextBox = "TimeToSelectTextBox";
+                public const string TextBoxDeleteButton = "DeleteButton";
+            }
+
+            public class AppearancePage
+            {
+                public const string MainTitleTextBox = "TitleMainTextBox";
                 public const string UseTerminalNameAsTitleCheckBox = "UseTerminalNameAsTitleCheckBox";
-                public const string TitleAdditionalTextBox = "TitleAdditionalTextBox";
+                public const string AdditionalTitleTextBox = "TitleAdditionalTextBox";
             }
 
-            public static class PeoplePage
+            public class GeneralPage
             {
-                public const string PeopleList = "PeopleListView";
+                public const string LanguageComboBox = "LanguageComboBox";
+                public const string ComboBoxItems = "ComboBoxItem";
+                public const string LightDismiss = "Light Dismiss";
+
+                public const string ChangeWillTakeEffectOnApplicationRestart = "TextBlock";
+
+                public const string TimeFormatComboBox = "TimeFormatComboBox";
+                public const string NewPassword = "NewPassword";
+                public const string NewPasswordCheck = "NewPasswordCheck";
+                public const string ChangeAdministratorPassword = "Change administrator password";
+
+                public const string OkButton = "PrimaryButton";
+                public const string YesButton = "PrimaryButton";
+                public const string NoButton = "SecondaryButton";
+                public const string DialogMessageTextBlock = "DialogMessageTextBlock";
+            }
+
+            public class PeoplePage
+            {
+                public const string PeopleList = "Logeto.Client.Core.DataLayer.GLO_OSOBY";
                 public const string PinCheckBox = "UsePinCheckBox";
                 public const string PinTextBox = "PINTextBox";
             }
+
+            public class IdentificationPage
+            {
+                public const string EnableKeyboardEmulationReadersCheckBox = "EnableHIDCardReadersCheckBox";
+                public const string DropDownButton = "DropDownButton";
+                public const string DropDownList = "ListViewItem";
+                public const string TestChipReaderButton = "SmartCardTestButton";
+            }
         }
 
-        public static class SelectPersonPage
+        public class SelectPersonPage
         {
-            public const string BackButton = "BackButton"; 
+            public const string BackButton = "BackButton";
 
             public const string PeopleList = "ListViewItem";
 
-            public const string NumZero = "Number0Button";
-            public const string NumOne = "Number1Button";
-            public const string NumTwo = "Number2Button";
-            public const string NumThree = "Number3Button";
-            public const string NumFour = "Number4Button";
-            public const string NumFive = "Number5Button";
-            public const string NumSix = "Number6Button";
-            public const string NumSeven = "Number7Button";
-            public const string NumEight = "Number8Button";
-            public const string NumNine = "Number9Button";
             public const string ClearButton = "ClearButton";
             public const string BackspaceButton = "BackspaceButton";
         }
 
-        public static class Terminal
+        public class TerminalPages
         {
-            public static class HamburgerMenu
+            public class HamburgerMenu
             {
                 public const string HamburgerMenuToggleButton = "HamburgerMenuToggleButton";
 
-                public const string TerminalMenuItem = "TerminalMenuItem";
-                public const string SummaryMenuItem = "SummaryMenuItem";
-                public const string LogoutMenuItem = "LogoutMenuItem";
-                public const string SettingsMenuItem = "SettingsMenuItem";
+                public const string TerminalMenuItemButton = "TerminalMenuItem";
+                public const string SummaryMenuItemButton = "SummaryMenuItem";
+                public const string LogoutMenuItemButton = "LogoutMenuItem";
+                public const string SettingsMenuItemButton = "SettingsMenuItem";
             }
 
-            public static class TerminalPage
+            public class TerminalPage
             {
                 public const string ActivityList = "ActivityName";
             }
 
-            public static class SummaryPage
+            public class SummaryPage
             {
                 public const string PageTitel = "LeftTitleTextBlock";
-                public const string ThisMonthTotal = "MonthTotalTextBlock";
+                public const string ThisMonthTotalTextBlock = "MonthTotalTextBlock";
             }
         }
 
-        public static class ConfirmationPage
+        public class ConfirmationPage
         {
             public const string ActvitySelectedTextBlock = "ActvitySelectedTextBlock";
             public const string FillAdditionalInfoButton = "FillAdditionalInfoButton";
         }
 
-        public static class FillRecord
+        public class FillRecordPages
         {
-            public static class CommonItems
+            public class CommonItems
             {
                 public const string CancelButton = "CancelButton";
 
@@ -177,84 +201,82 @@
                 public const string DeclineButton = "BackButton";
             }
 
-            public static class DescriptionPage
+            public class DescriptionPage
             {
                 public const string PageTitel = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId16']";
-                public const string TextBox = "AutomationId16TextBox";
+                public const string DescriptionTextBox = "AutomationId16TextBox";
             }
 
-            public static class ContractPage
+            public class ContractPage
             {
                 public const string PageTitel = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId17']";
                 public const string ContractList = "ListBoxItem";
             }
 
-            public static class SubcontractPage
+            public class SubcontractPage
             {
                 public const string PageTitel = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId18']";
                 public const string SubcontractList = "ListBoxItem";
             }
 
-            public static class BillablePage
+            public class BillablePage
             {
-                public static string PageTitel = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId19']";
-                public static string ToggleSwitch = "AutomationId19ToggleSwitch";
+                public const string PageTitel = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId19']";
+                public const string BillableToggleSwitch = "AutomationId19ToggleSwitch";
             }
 
-            public static class ListCustomFieldPage
+            public class ListCustomFieldPage
             {
-                public static string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId20']";
-                public static string ListCustomList = "ListBoxItem";
+                public const string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId20']";
+                public const string ListCustomList = "ListBoxItem";
             }
 
-            public static class TextCustomFieldPage
+            public class TextCustomFieldPage
             {
-                public static string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId21']";
-                public static string TextBox = "AutomationId21TextBox";
+                public const string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId21']";
+                public const string TextCustomTextBox = "AutomationId21TextBox";
             }
 
-            public static class NumberCustomFieldPage
+            public class NumberCustomFieldPage
             {
-                public static string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId22']";
-                public static string NumericTextBox = "AutomationId22NumericTextBox";
+                public const string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId22']";
+                public const string NumberCustomTextBox = "AutomationId22NumericTextBox";
             }
 
-            public static class DecimalCustomFieldPage
+            public class DecimalCustomFieldPage
             {
-                public static string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId23']";
-                public static string DecimalTextBox = "AutomationId23NumericTextBox";
+                public const string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId23']";
+                public const string DecimalCustomTextBox = "AutomationId23NumericTextBox";
             }
 
-            public static class YesNoCustomFieldPage
+            public class YesNoCustomFieldPage
             {
-                public static string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId24']";
-                public static string ToggleSwitch = "AutomationId24ToggleSwitch";
+                public const string PageTitle = "//Pane[@AutomationId='MainScrollViewer']/Text[@ClassName='TextBlock'][@AutomationId='AutomationId24']";
+                public const string YesNoCustomToggleSwitch = "AutomationId24ToggleSwitch";
             }
 
-            public static class OverviewPage
+            public class OverviewPage
             {
-                public static string SettingsButton = "SettingsButton";
-                public static string DeclineButton = "//Pane[@AutomationId='MainScrollViewer']/Button[@ClassName='Button'][position()=1]";
-                public static string ConfirmButton = "//Pane[@AutomationId='MainScrollViewer']/Button[@ClassName='Button'][position()=2]";
+                public const string SettingsButton = "SettingsButton";
+                public const string DeclineButton = "//Pane[@AutomationId='MainScrollViewer']/Button[@ClassName='Button'][position()=1]";
+                public const string ConfirmButton = "//Pane[@AutomationId='MainScrollViewer']/Button[@ClassName='Button'][position()=2]";
 
-                public static string UserSettings = "UserSettings";
-
-                public static string DescriptionTextBox = "AutomationId16TextBox";
-                public static string ContractComboBox = "AutomationId17TextBox";
-                public static string SubcontractComboBox = "AutomationId18TextBox";
-                public static string BillableToggleSwitch = "AutomationId19ToggleSwitch";
-                public static string ListCustomFieldComboBox = "AutomationId20TextBox";
-                public static string TextCustomFieldTextBox = "AutomationId21TextBox";
-                public static string NumberCustomFieldTextBox = "AutomationId22NumericTextBox";
-                public static string DecimalCustomFieldTextBox = "AutomationId23NumericTextBox";
-                public static string YesNoToggleSwitch = "AutomationId24ToggleSwitch";
+                public const string DescriptionTextBox = "AutomationId16TextBox";
+                public const string ContractComboBox = "AutomationId17TextBox";
+                public const string SubcontractComboBox = "AutomationId18TextBox";
+                public const string BillableToggleSwitch = "AutomationId19ToggleSwitch";
+                public const string ListCustomFieldComboBox = "AutomationId20TextBox";
+                public const string TextCustomFieldTextBox = "AutomationId21TextBox";
+                public const string NumberCustomFieldTextBox = "AutomationId22NumericTextBox";
+                public const string DecimalCustomFieldTextBox = "AutomationId23NumericTextBox";
+                public const string YesNoCustomFieldToggleSwitch = "AutomationId24ToggleSwitch";
             }
 
-            public static class OverviewSettingsPage
+            public class OverviewSettingsPage
             {
-                public static string BackButton = "BackButton";
+                public const string BackButton = "BackButton";
 
-                public static string StartFillInOtherInformationAutomatically = "FillInfoAutomaticallyCheckBox";
+                public const string StartFillInOtherInformationAutomaticallyCheckBox = "FillInfoAutomaticallyCheckBox";
             }
         }
     }
