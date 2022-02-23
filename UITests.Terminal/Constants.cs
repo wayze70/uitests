@@ -4,8 +4,8 @@
     {
         public class Account
         {
-            public const string AccountName = "dbsyristeautoterminal";
-            public const string Email = "michal.syriste@vykazprace.cz";
+            public const string AccountName = "dbsyristedemoautoterminal";
+            public const string Email = "syriste@tempuri.org";
             public const string Password = "123456";
         }
 

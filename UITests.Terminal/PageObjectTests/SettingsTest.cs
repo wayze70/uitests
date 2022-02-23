@@ -129,9 +129,6 @@ namespace UITests.Terminal
             PageFactory.SettingsPages.GeneralPage.SelectItemFromLanguageComboBox("Default");
             Assert.IsFalse(PageFactory.SettingsPages.GeneralPage.IsWarningMessageVisible());
 
-            PageFactory.SettingsPages.GeneralPage.SelectItemFromTimeFormatComboBox("24");
-            PageFactory.SettingsPages.GeneralPage.SelectItemFromTimeFormatComboBox("Default");
-
             PageFactory.SettingsPages.GeneralPage.SetNewPassword(_terminalPassword, _terminalPassword);
             PageFactory.SettingsPages.GeneralPage.NewPasswordSuccessfulDialog();
 
