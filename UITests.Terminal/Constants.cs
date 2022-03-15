@@ -25,7 +25,8 @@
 
         public class Directory
         {
-            public const string Default = @"C:\UITests\UITests.Terminal";
+            public const string WindowsDefault = @"C:\UITests\UITests.Terminal";
+            public const string LinuxDefault = "/UITests";
             public const string Screenshots = "Screenshots";
             public const string Errors = "Errors";
         }

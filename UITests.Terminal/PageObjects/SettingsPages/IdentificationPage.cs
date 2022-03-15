@@ -9,7 +9,7 @@ namespace UITests.Terminal.PageObjects.SettingsPages
         private FindBy _dropDownButton = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.IdentificationPage.DropDownButton);
         private FindBy _dropDownList = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.IdentificationPage.DropDownList);
         private FindBy _testChipReaderButton = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.IdentificationPage.TestChipReaderButton);
-        
+
         public void SetEnableKeyboardEmulationReadersCheckBoxState(bool state)
         {
             var element = _enableKeyboardEmulationReadersCheckBox.WaitForElementToBeClickable();

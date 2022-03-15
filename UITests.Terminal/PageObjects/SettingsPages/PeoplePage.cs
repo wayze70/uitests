@@ -25,7 +25,7 @@ namespace UITests.Terminal.PageObjects.SettingsPages
                 element.Click();
 
                 // When the state of the checkbox changes, the people list is refreshed
-                if (!GetPinCheckBoxState()) 
+                if (!GetPinCheckBoxState())
                 {
                     SetPinCheckBoxState(true);
                     var elementCheck = _peopleList.WaitForElements().ElementAt(i);

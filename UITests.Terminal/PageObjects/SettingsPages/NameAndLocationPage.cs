@@ -1,12 +1,11 @@
 ﻿using NUnit.Framework;
-using System.Threading;
 
 namespace UITests.Terminal.PageObjects.SettingsPages
 {
     public class NameAndLocationPage : SettingsSideMenu
     {
         private FindBy _deviceNameTextBox = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.NameAndLocationPage.DeviceNameTextBox);
-        private FindBy _errorMassageTextBlock = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.NameAndLocationPage.ErrorMessageTextBlock);
+        private FindBy _errorMessageTextBlock = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.NameAndLocationPage.ErrorMessageTextBlock);
         private FindBy _locationAddressComboBox = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.NameAndLocationPage.LocationAddressComboBox);
         private FindBy _clearButton = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.NameAndLocationPage.ClearButton);
         private FindBy _mapPopupButton = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.NameAndLocationPage.ExtraButton);
@@ -26,7 +25,7 @@ namespace UITests.Terminal.PageObjects.SettingsPages
             var element = _deviceNameTextBox.WaitForElementToBeClickable();
 
             element.Clear();
-            _errorMassageTextBlock.WaitForElementIfVisible();
+            _errorMessageTextBlock.WaitForElementIfVisible();
             element.SendKeys(deviceName);
 
             Assert.AreEqual(deviceName, element.Text);

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace UITests.Terminal.PageObjects.FillRecordPages
+﻿namespace UITests.Terminal.PageObjects.FillRecordPages
 {
     public class BillablePage : CommonItems
     {

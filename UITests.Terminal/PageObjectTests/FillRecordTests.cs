@@ -66,12 +66,6 @@ namespace UITests.Terminal
             Assert.AreEqual(_listCustomFieldItem, PageFactory.FillRecordPages.OverviewPage.GetListCustomFieldValue());
             Assert.AreEqual(_textCustomFieldText, PageFactory.FillRecordPages.OverviewPage.GetTextCustomFieldValue());
 
-            // Generátor databází zatím nepodporuje vlastní pole typu: Number, Decimal, Yes/No
-
-            /*Assert.AreEqual(_numberCustomFieldNumber, PageFactory.FillRecordPages.OverviewPage.GetNumberCustomFieldValue());
-            Assert.AreEqual(_decimalCustomFieldNumber, PageFactory.FillRecordPages.OverviewPage.GetDecimalCustomFieldValue());
-            Assert.AreEqual(_yesNoCustomFieldState, PageFactory.FillRecordPages.OverviewPage.GetYesNoCustomFieldValue());*/
-
             PageFactory.FillRecordPages.OverviewPage.ClickToConfirmButton();
         }
 
@@ -113,24 +107,6 @@ namespace UITests.Terminal
             PageFactory.FillRecordPages.TextCustomFieldPage.ClickToConfirmEditButton();
             Assert.AreEqual(_textCustomFieldTextEdited, PageFactory.FillRecordPages.OverviewPage.GetTextCustomFieldValue());
 
-            // Generátor databází zatím nepodporuje vlastní pole typu: Number, Decimal, Yes/No
-
-            // Number custom field
-            /*PageFactory.FillRecordPages.OverviewPage.ClickToNumberCustomField();
-            PageFactory.FillRecordPages.NumberCustomFieldPage.WriteAllInformationOnPage(_numberCustomFieldNumberEdited);
-            PageFactory.FillRecordPages.NumberCustomFieldPage.ClickToConfirmEditButton();
-            Assert.AreEqual(_numberCustomFieldNumberEdited, PageFactory.FillRecordPages.OverviewPage.GetNumberCustomFieldValue());
-
-            // Decimal custom field
-            PageFactory.FillRecordPages.OverviewPage.ClickToDecimalCustomField();
-            PageFactory.FillRecordPages.DecimalCustomFieldPage.WriteAllInformationOnPage(_decimalCustomFieldNumberEdited);
-            PageFactory.FillRecordPages.DecimalCustomFieldPage.ClickToConfirmEditButton();
-            Assert.AreEqual(_decimalCustomFieldNumberEdited, PageFactory.FillRecordPages.OverviewPage.GetDecimalCustomFieldValue());
-
-            // Yes no custom field
-            PageFactory.FillRecordPages.OverviewPage.ClickToYesNoCustomField();
-            Assert.AreEqual(_yesNoCustomFieldStateEdited, PageFactory.FillRecordPages.OverviewPage.GetYesNoCustomFieldValue());*/
-
             PageFactory.FillRecordPages.OverviewPage.ClickToConfirmButton();
         }
 
@@ -166,25 +142,10 @@ namespace UITests.Terminal
 
             Assert.AreEqual(LocalizedStrings.FillRecordPageTitles.ListCustomField, PageFactory.FillRecordPages.ListCustomFieldPage.GetPageTitle());
             PageFactory.FillRecordPages.ListCustomFieldPage.SelectListCustomFieldItem(_listCustomFieldItem);
-            
+
             Assert.AreEqual(LocalizedStrings.FillRecordPageTitles.TextCustomField, PageFactory.FillRecordPages.TextCustomFieldPage.GetPageTitle());
             PageFactory.FillRecordPages.TextCustomFieldPage.WriteAllInformationOnPage(_textCustomFieldText);
             PageFactory.FillRecordPages.TextCustomFieldPage.ClickToNextPageButton();
-            
-
-            // Generátor databází zatím nepodporuje vlastní pole typu: Number, Decimal, Yes/No
-
-            /*Assert.AreEqual(LocalizedStrings.FillRecordPageTitles.NumberCustomField, PageFactory.FillRecordPages.NumberCustomFieldPage.GetPageTitle());
-            PageFactory.FillRecordPages.NumberCustomFieldPage.WriteAllInformationOnPage(_numberCustomFieldNumber);
-            PageFactory.FillRecordPages.NumberCustomFieldPage.ClickToNextPageButton();
-
-            Assert.AreEqual(LocalizedStrings.FillRecordPageTitles.DecimalCustomField, PageFactory.FillRecordPages.DecimalCustomFieldPage.GetPageTitle());
-            PageFactory.FillRecordPages.DecimalCustomFieldPage.WriteAllInformationOnPage(_decimalCustomFieldNumber);
-            PageFactory.FillRecordPages.DecimalCustomFieldPage.ClickToNextPageButton();
-
-            Assert.AreEqual(LocalizedStrings.FillRecordPageTitles.YesNoCustomField, PageFactory.FillRecordPages.YesNoCustomFieldPage.GetPageTitle());
-            PageFactory.FillRecordPages.YesNoCustomFieldPage.SetToggleSwitchState(_yesNoCustomFieldState);
-            PageFactory.FillRecordPages.YesNoCustomFieldPage.ClickToNextPageButton();*/
         }
 
         private static void SkipFillRecord()
@@ -210,17 +171,6 @@ namespace UITests.Terminal
 
             Assert.AreEqual(LocalizedStrings.FillRecordPageTitles.TextCustomField, PageFactory.FillRecordPages.TextCustomFieldPage.GetPageTitle());
             PageFactory.FillRecordPages.TextCustomFieldPage.ClickToNextPageButton();
-
-            // Generátor databází zatím nepodporuje vlastní pole typu: Number, Decimal, Yes/No
-
-            /*Assert.AreEqual(LocalizedStrings.FillRecordPageTitles.NumberCustomField, PageFactory.FillRecordPages.NumberCustomFieldPage.GetPageTitle());
-            PageFactory.FillRecordPages.NumberCustomFieldPage.ClickToNextPageButton();
-
-            Assert.AreEqual(LocalizedStrings.FillRecordPageTitles.DecimalCustomField, PageFactory.FillRecordPages.DecimalCustomFieldPage.GetPageTitle());
-            PageFactory.FillRecordPages.DecimalCustomFieldPage.ClickToNextPageButton();
-
-            Assert.AreEqual(LocalizedStrings.FillRecordPageTitles.YesNoCustomField, PageFactory.FillRecordPages.YesNoCustomFieldPage.GetPageTitle());
-            PageFactory.FillRecordPages.YesNoCustomFieldPage.ClickToNextPageButton();*/
         }
     }
 }

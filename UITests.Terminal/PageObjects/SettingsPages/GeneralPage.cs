@@ -11,7 +11,7 @@ namespace UITests.Terminal.PageObjects.SettingsPages
         private FindBy _warningMessage = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.GeneralPage.ChangeWillTakeEffectOnApplicationRestart);
 
         private FindBy _timeFormatComboBox = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.GeneralPage.TimeFormatComboBox);
-        
+
         private FindBy _newAdminPassword = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.GeneralPage.NewPassword);
         private FindBy _newAdminPasswordCheck = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.GeneralPage.NewPasswordCheck);
         private FindBy _changeAdminPasswordButton = new FindBy(How.Name, AutomationLocators.SettingsPages.GeneralPage.ChangeAdministratorPassword);
@@ -19,7 +19,7 @@ namespace UITests.Terminal.PageObjects.SettingsPages
         private FindBy _dialogOkButton = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.GeneralPage.OkButton);
         private FindBy _dialogYesButton = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.GeneralPage.YesButton);
         private FindBy _dialogNoButton = new FindBy(How.AccessibilityId, AutomationLocators.SettingsPages.GeneralPage.NoButton);
-        
+
         public void SelectItemFromLanguageComboBox(string item)
         {
             _languageComboBox.WaitForElementToBeClickable().Click();

@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
 using System;
+using System.Runtime.InteropServices;
 using System.Threading;
 using UITests.Terminal;
 
@@ -9,7 +10,7 @@ public partial class Session
 {
     private const string PackageName = "B158BDD8.LogetoTerminal_kaaqb1ec1n05t";
 
-    public static string DefaultDirectory => Environment.GetEnvironmentVariable("UItests_Terminal_DefaultDirectory") ?? Constants.Directory.Default;
+    public static string DefaultDirectory => Environment.GetEnvironmentVariable("UItests_Terminal_DefaultDirectory") ?? (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? Constants.Directory.WindowsDefault : Constants.Directory.LinuxDefault);
     public static string Enviroment => Environment.GetEnvironmentVariable("UItests_Terminal_Enviroment") ?? Constants.Environment.Staging;
     public static string Ip => Environment.GetEnvironmentVariable("UItests_Terminal_Ip") ?? "127.0.0.1";
 
@@ -38,6 +39,5 @@ public partial class Session
         }
 
         Assert.NotNull(Driver, "Failed to locate application");
-        Driver.Manage().Window.Maximize();
     }
 }
