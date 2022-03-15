@@ -35,7 +35,7 @@ namespace UITests.Terminal
             // Go to people list
             PageFactory.HomePage.ClickToEnterPin();
 
-            // Select first person and enter pin
+            // Select person and enter pin
             PageFactory.SelectPersonPage.ClickToPerson();
             PageFactory.SelectPersonPage.EnterPin(1234);
 
